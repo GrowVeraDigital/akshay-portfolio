@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+// ── Design Tokens ──
+:root {
+  --bg: #101010;
+  --panel: #171717;
+  --panel2: #1d1d1d;
+  --text: #f4f4ef;
+  --muted: #9d9d98;
+  --lime: #c8ff00;
+  --line: #2c2c2a;
+  --max: 1240px;
+}
+
+// ── Global Resets ──
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.contact-email,
+.contact-details,
+.contact-details * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  -webkit-touch-callout: default !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+// ── Shared Layout ──
+.section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 30px 28px;
+}
+
+.projects { max-width: 1350px; }
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+// ── Shared Typography ──
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.1px;
+  color: var(--lime);
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+h1, h2, h3 { font-family: "Space Grotesk", sans-serif; }
+
+h1 {
+  font-size: clamp(54px, 7vw, 94px);
+  line-height: .94;
+  letter-spacing: -5px;
+  max-width: 780px;
+}
+
+h1 span, h2 span { color: var(--lime); }
+
+h2 {
+  font-size: clamp(46px, 5.5vw, 76px);
+  line-height: .98;
+  letter-spacing: -4px;
+}
+
+.logo span,
+footer span { color: var(--lime); }
+
+// ── Shared Buttons ──
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 19px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.hire-btn,
+.btn-primary {
+  background: var(--lime);
+  color: #111;
+  padding: 12px 19px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.hire-btn:hover,
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-primary span { font-size: 18px; }
+
+.btn-ghost { border: 1px solid var(--line); color: #ddd; }
+.btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+
+// ── Shared Section Labels ──
+.section-label {
+  color: #c9c9c3;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.section-labelnew {
+  color: #c9c9c3;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+// ── Shared Grids ──
+.about-grid,
+.services-grid,
+.experience-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 100px;
+}
+
+// ── Shared Responsive ──
+@media(max-width:900px) {
+  .about-grid,
+  .services-grid,
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .section { padding: 64px 22px; }
+  .section-label { margin-bottom: 34px; }
+}
+
+@media(max-width:650px) {
+  h1 { letter-spacing: -3px; }
+  .section { padding: 52px 18px; }
+}
+
+// ── Component Styles ──
+@import '../components/Reveal/Reveal';
+@import '../components/CursorGlow/CursorGlow';
+@import '../components/Header/Header';
+@import '../components/Hero/Hero';
+@import '../components/Marquee/Marquee';
+@import '../components/About/About';
+@import '../components/Projects/Projects';
+@import '../components/DesignGallery/DesignGallery';
+@import '../components/VideoModal/VideoModal';
+@import '../components/ImageModal/ImageModal';
+@import '../components/Services/Services';
+@import '../components/Experience/Experience';
+@import '../components/Skills/Skills';
+@import '../components/Contact/Contact';
+@import '../components/Footer/Footer';

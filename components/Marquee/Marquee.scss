@@ -1,0 +1,33 @@
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  background: #141414;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll 28s linear infinite;
+  font-family: "Space Grotesk";
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-right: 35px;
+}
+
+.marquee b {
+  color: var(--lime);
+}
+
+@keyframes scroll {
+  to { transform: translateX(-25%); }
+}

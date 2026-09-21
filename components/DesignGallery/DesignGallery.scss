@@ -1,0 +1,74 @@
+.real-work { margin-top: 50px; }
+
+.real-work-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.real-work-head h3 { font-size: 38px; letter-spacing: -2px; }
+.real-work-head h3 span { color: var(--lime); }
+
+.real-work-note {
+  max-width: 360px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.design-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.design-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #191919;
+  border: 1px solid #292929;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+}
+
+.design-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.design-item:hover img {
+  transform: scale(1.02);
+  filter: brightness(.72);
+}
+
+.design-item>span {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  background: #111d;
+  color: #fff;
+  border: 1px solid #ffffff22;
+  padding: 5px 8px;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+@media(max-width:900px) {
+  .real-work-head { display: block; }
+  .real-work-note { margin-top: 12px; }
+}
+
+@media(max-width:650px) {
+  .real-work-head h3 { font-size: 30px; }
+}

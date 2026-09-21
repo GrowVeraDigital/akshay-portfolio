@@ -1,0 +1,44 @@
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, .92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+
+.image-modal.open { opacity: 1; }
+
+.image-modal-inner {
+  max-width: min(1000px, 94vw);
+  max-height: 92vh;
+  text-align: center;
+}
+
+.image-modal img {
+  max-width: 100%;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+
+.image-modal p { color: #bbb; font-size: 12px; margin-top: 12px; }
+
+.image-modal-close {
+  position: absolute;
+  right: 24px;
+  top: 18px;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+}

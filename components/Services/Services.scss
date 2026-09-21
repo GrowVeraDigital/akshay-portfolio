@@ -1,0 +1,21 @@
+.service-list { border-top: 1px solid var(--line); }
+
+.service {
+  display: grid;
+  grid-template-columns: 55px 1fr 1.2fr 30px;
+  gap: 20px;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service>span { color: #666; font-size: 11px; }
+.service h3 { font-size: 22px; }
+.service p { color: #777; font-size: 13px; line-height: 1.5; }
+.service b { color: var(--lime); font-size: 21px; }
+
+@media(max-width:900px) {
+  .service { grid-template-columns: 40px 1fr 30px; }
+  .service p { grid-column: 2; }
+  .service b { grid-column: 3; grid-row: 1; }
+}

@@ -1,0 +1,24 @@
+.experience-card {
+  background: #181818;
+  border: 1px solid #292929;
+  padding: 35px;
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.experience-card h3 { font-size: 36px; margin-top: 50px; }
+
+.role { color: var(--lime); margin: 8px 0 25px; }
+
+.experience-card ul {
+  padding-left: 20px;
+  color: #aaa;
+  line-height: 2;
+  font-size: 14px;
+}

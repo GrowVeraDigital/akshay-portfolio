@@ -1,0 +1,37 @@
+.about-copy {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #c6c6c0;
+}
+
+.about-copy p+p { margin-top: 20px; }
+.about-copy strong { color: #fff; }
+
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.info-row div {
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+
+.info-row span {
+  display: block;
+  color: #a3a39d;
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+.info-row strong {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ddd;
+}
+
+@media(max-width:650px) {
+  .info-row { grid-template-columns: 1fr; }
+}

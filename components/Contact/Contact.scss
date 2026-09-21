@@ -1,0 +1,35 @@
+.contact { padding-bottom: 70px; }
+
+.contact-box {
+  background: var(--lime);
+  color: #111;
+  padding: 75px 7%;
+  text-align: center;
+}
+
+.contact-box .eyebrow { color: #111; }
+.contact-box h2 { font-size: clamp(48px, 7vw, 90px); }
+
+.contact-email {
+  display: inline-block;
+  margin-top: 38px;
+  font-family: "Space Grotesk";
+  font-size: clamp(18px, 3vw, 32px);
+  border-bottom: 2px solid #111;
+  padding-bottom: 5px;
+}
+
+.contact-email span { margin-left: 8px; }
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 35px;
+  font-size: 12px;
+}
+
+@media(max-width:650px) {
+  .contact-box { padding: 55px 22px; }
+  .contact-details { flex-direction: column; gap: 8px; }
+}

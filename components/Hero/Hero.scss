@@ -1,0 +1,164 @@
+.hero {
+  min-height: 750px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 40px;
+  padding-top: 100px;
+}
+
+.hero-text {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 30px 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.hero-visual {
+  min-height: 530px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lime-orb {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: var(--lime);
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: blur(60px);
+  opacity: .35;
+}
+
+.visual-ring {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border: 1px dashed #3a3a3a;
+  border-radius: 50%;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-character {
+  position: relative;
+  z-index: 2;
+  height: 560px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 50px #000a);
+}
+
+.floating-card {
+  position: absolute;
+  background: #171717;
+  border: 1px solid #343434;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  min-width: 145px;
+  box-shadow: 0 20px 40px #0007;
+  z-index: 3;
+}
+
+.floating-card strong {
+  font-family: "Space Grotesk";
+  font-size: 34px;
+  color: var(--lime);
+  line-height: 1;
+}
+
+.floating-card span {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.card-top { right: 0; top: 80px; }
+.card-bottom { left: 5px; bottom: 45px; }
+
+.skill-icon {
+  position: absolute;
+  z-index: 4;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  filter: drop-shadow(0 14px 24px #0009);
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.icon-ps { top: 6%; left: 2%; }
+.icon-ai { top: 12%; right: 0%; }
+.icon-ae { bottom: 16%; left: -2%; }
+.icon-pr { bottom: 6%; right: 4%; }
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+  50% { transform: translate(6px, -16px) rotate(2deg); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) rotate(3deg); }
+  50% { transform: translate(-8px, 14px) rotate(-3deg); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0) rotate(-3deg); }
+  50% { transform: translate(8px, 12px) rotate(4deg); }
+}
+
+@keyframes float-d {
+  0%, 100% { transform: translate(0, 0) rotate(4deg); }
+  50% { transform: translate(-6px, -14px) rotate(-2deg); }
+}
+
+.float-a { animation: float-a 6.5s ease-in-out infinite; }
+.float-b { animation: float-b 7.5s ease-in-out infinite; }
+.float-c { animation: float-c 8.2s ease-in-out infinite; }
+.float-d { animation: float-d 7s ease-in-out infinite; }
+
+@media(max-width:900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 125px; }
+  .hero-visual { min-height: 500px; }
+  .card-top { right: 7%; }
+  .card-bottom { left: 7%; }
+}
+
+@media(max-width:650px) {
+  .hero-text { font-size: 15px; }
+  .hero-actions { flex-wrap: wrap; }
+  .hero-visual { min-height: 440px; }
+  .lime-orb { width: 320px; height: 320px; }
+  .visual-ring { width: 260px; height: 260px; }
+  .hero-character { height: 380px; }
+  .floating-card { min-width: 120px; }
+  .card-top { top: 40px; }
+  .card-bottom { bottom: 15px; }
+  .skill-icon { width: 38px; height: 38px; border-radius: 9px; }
+  .skill-icon img { border-radius: 9px; }
+}
