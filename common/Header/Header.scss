@@ -1,0 +1,110 @@
+.site-header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+  background: rgba(16, 16, 16, .82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.logo {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: -1px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+}
+
+.nav>a:not(.hire-btn) {
+  color: #cfcfca;
+  position: relative;
+  transition: color .2s ease;
+}
+
+.nav>a:not(.hire-btn):hover,
+.nav>a:not(.hire-btn).active {
+  color: var(--lime);
+}
+
+.nav>a:not(.hire-btn).active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 8px var(--lime);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+}
+
+@media(max-width:900px) {
+  .nav {
+    gap: 18px;
+  }
+}
+
+@media(max-width:650px) {
+  .site-header {
+    padding: 0 20px;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-btn span {
+    width: 22px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 20px;
+    background: #121212;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav>a {
+    width: 100%;
+    padding: 7px 0;
+  }
+
+  .hire-btn {
+    text-align: center;
+  }
+}

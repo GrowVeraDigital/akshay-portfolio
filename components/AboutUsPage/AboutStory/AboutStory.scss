@@ -1,0 +1,155 @@
+.about-story-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.story-heading {
+  margin-bottom: 26px;
+  span {
+    color: var(--lime);
+  }
+}
+
+.story-narrative {
+  color: #bfbfb8;
+  font-size: 17px;
+  line-height: 1.78;
+
+  p + p {
+    margin-top: 20px;
+  }
+
+  strong {
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+.quote-callout {
+  position: relative;
+  margin-top: 36px;
+  padding: 24px 28px 24px 44px;
+  background: rgba(200, 255, 0, 0.04);
+  border-left: 3px solid var(--lime);
+  border-radius: 0 12px 12px 0;
+
+  .quote-mark {
+    position: absolute;
+    left: 14px;
+    top: 6px;
+    font-size: 44px;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--lime);
+    line-height: 1;
+    opacity: 0.6;
+  }
+
+  p {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #e5e5dc;
+    font-style: italic;
+  }
+}
+
+// ── Profile Matrix Card ──
+.profile-matrix-card {
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  border: 1px solid #282828;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  .matrix-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}
+
+.matrix-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.matrix-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 600;
+  }
+
+  .value {
+    font-size: 14px;
+    color: #deded8;
+    font-weight: 500;
+
+    &.highlight {
+      color: var(--lime);
+      font-weight: 600;
+    }
+  }
+}
+
+.curated-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  .tag {
+    font-size: 11px;
+    color: #a5a59e;
+    background: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    padding: 5px 11px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--lime);
+      color: var(--lime);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .profile-matrix-card {
+    padding: 28px 22px;
+  }
+}

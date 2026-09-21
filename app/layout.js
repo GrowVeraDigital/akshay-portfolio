@@ -1,6 +1,6 @@
 import "./globals.scss";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import Header from "@/common/Header/Header";
+import Footer from "@/common/Footer/Footer";
 
 export const metadata = {
   title: "Akshay Chheta — Graphic Designer & Video Editor",

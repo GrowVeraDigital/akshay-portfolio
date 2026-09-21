@@ -1,0 +1,134 @@
+.about-cta-section {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.about-cta-box {
+  background: var(--lime);
+  color: #111;
+  padding: 80px 8%;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.cta-eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cta-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(38px, 5.5vw, 76px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -3px;
+  color: #111;
+  margin-bottom: 22px;
+
+  span {
+    color: #111;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+  }
+}
+
+.cta-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto 34px;
+  color: #222;
+}
+
+.cta-email-link {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(20px, 3.5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  margin-bottom: 40px;
+  transition: opacity 0.2s ease;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.cta-button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &.cta-btn-dark {
+    background: #111;
+    color: var(--lime);
+    border: 1px solid #111;
+
+    &:hover {
+      background: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  &.cta-btn-outline {
+    background: transparent;
+    color: #111;
+    border: 1.5px solid rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      border-color: #111;
+      background: rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .about-cta-box {
+    padding: 55px 6%;
+  }
+
+  .cta-heading {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .cta-email-link {
+    font-size: 19px;
+  }
+
+  .cta-button-group {
+    flex-direction: column;
+    width: 100%;
+
+    .cta-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

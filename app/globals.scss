@@ -167,20 +167,3 @@ footer span { color: var(--lime); }
   h1 { letter-spacing: -3px; }
   .section { padding: 52px 18px; }
 }
-
-// ── Component Styles ──
-@import '../components/Reveal/Reveal';
-@import '../components/CursorGlow/CursorGlow';
-@import '../components/Header/Header';
-@import '../components/Hero/Hero';
-@import '../components/Marquee/Marquee';
-@import '../components/About/About';
-@import '../components/Projects/Projects';
-@import '../components/DesignGallery/DesignGallery';
-@import '../components/VideoModal/VideoModal';
-@import '../components/ImageModal/ImageModal';
-@import '../components/Services/Services';
-@import '../components/Experience/Experience';
-@import '../components/Skills/Skills';
-@import '../components/Contact/Contact';
-@import '../components/Footer/Footer';

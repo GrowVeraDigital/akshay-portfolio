@@ -1,0 +1,317 @@
+.about-hero-section {
+  padding-top: 130px;
+  padding-bottom: 60px;
+}
+
+.about-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 35px;
+
+  a {
+    color: #a0a09a;
+    transition: color .2s ease;
+    &:hover {
+      color: var(--lime);
+    }
+  }
+
+  span {
+    color: #444;
+  }
+
+  .current {
+    color: var(--lime);
+    font-weight: 600;
+  }
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 14px;
+  background: rgba(200, 255, 0, 0.08);
+  border: 1px solid rgba(200, 255, 0, 0.25);
+  border-radius: 100px;
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 10px var(--lime);
+    animation: statusPulse 2s infinite ease-in-out;
+  }
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
+}
+
+.about-hero-title {
+  font-size: clamp(48px, 6.2vw, 84px);
+  line-height: 0.96;
+  letter-spacing: -4px;
+  margin-bottom: 26px;
+
+  span {
+    color: var(--lime);
+  }
+}
+
+.about-hero-desc {
+  max-width: 620px;
+  color: #bfbfb8;
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+
+  strong {
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+.about-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+// ── Hero Visual Card ──
+.about-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 480px;
+  background: radial-gradient(130% 120% at 50% 20%, #1e1e1e 0%, #131313 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+
+  .card-glow-orb {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 25%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 255, 0, 0.18), transparent 70%);
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-ambient-ring {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    top: 18%;
+    border-radius: 50%;
+    border: 1px dashed rgba(200, 255, 0, 0.18);
+    pointer-events: none;
+    animation: ringRotate 30s linear infinite;
+  }
+
+  .about-character-img {
+    position: relative;
+    z-index: 2;
+    height: 92%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  &:hover .about-character-img {
+    transform: scale(1.03) translateY(-4px);
+  }
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// ── Floating Badges ──
+.hero-badge {
+  position: absolute;
+  z-index: 4;
+  background: rgba(22, 22, 22, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  .badge-icon {
+    font-size: 16px;
+  }
+
+  .badge-sub {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  strong {
+    display: block;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &.badge-top-right {
+    top: 25px;
+    right: -20px;
+    animation: badgeFloatA 4.5s ease-in-out infinite;
+  }
+
+  &.badge-bottom-left {
+    bottom: 25px;
+    left: -20px;
+    animation: badgeFloatB 5s ease-in-out infinite;
+  }
+}
+
+// ── Floating Tool Icons ──
+.floating-app-icon {
+  position: absolute;
+  z-index: 4;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.18);
+    border-color: var(--lime);
+  }
+
+  &.icon-1 {
+    top: 60px;
+    left: -18px;
+    animation: badgeFloatB 5s ease-in-out infinite 0.4s;
+  }
+
+  &.icon-2 {
+    bottom: 120px;
+    left: -24px;
+    animation: badgeFloatA 4.8s ease-in-out infinite 0.8s;
+  }
+
+  &.icon-3 {
+    top: 140px;
+    right: -24px;
+    animation: badgeFloatB 5.2s ease-in-out infinite 1.2s;
+  }
+
+  &.icon-4 {
+    bottom: 90px;
+    right: -16px;
+    animation: badgeFloatA 4.6s ease-in-out infinite 1.6s;
+  }
+}
+
+@keyframes badgeFloatA {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes badgeFloatB {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+// ── Responsive Overrides ──
+@media (max-width: 900px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-hero-card {
+    max-width: 380px;
+    height: 420px;
+  }
+
+  .hero-badge.badge-top-right {
+    right: 5px;
+  }
+
+  .hero-badge.badge-bottom-left {
+    left: 5px;
+  }
+
+  .floating-app-icon.icon-1 { left: 5px; }
+  .floating-app-icon.icon-2 { left: 5px; }
+  .floating-app-icon.icon-3 { right: 5px; }
+  .floating-app-icon.icon-4 { right: 5px; }
+}
+
+@media (max-width: 650px) {
+  .about-hero-section {
+    padding-top: 105px;
+  }
+
+  .about-hero-title {
+    font-size: 38px;
+    letter-spacing: -2px;
+  }
+
+  .about-hero-card {
+    max-width: 320px;
+    height: 360px;
+  }
+}

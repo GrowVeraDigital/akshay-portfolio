@@ -1,0 +1,193 @@
+.about-tools-section {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.tool-card {
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  border: 1px solid #282828;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200, 255, 0, 0.4);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+
+    .tool-icon-wrapper {
+      transform: scale(1.08);
+      border-color: var(--lime);
+    }
+  }
+}
+
+.tool-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.tool-card-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tool-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #202020;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+
+  img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+}
+
+.tool-category {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 600;
+}
+
+.tool-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.tool-level-badge {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lime);
+  background: rgba(200, 255, 0, 0.08);
+  border: 1px solid rgba(200, 255, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.tool-level-bar {
+  width: 100%;
+  height: 4px;
+  background: #242424;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+
+  .tool-level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #c8ff00, #95cc00);
+    border-radius: 4px;
+  }
+}
+
+.tool-card-desc {
+  color: #9d9d96;
+  font-size: 13px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  .tool-tag-item {
+    font-size: 11px;
+    color: #b5b5ad;
+    background: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+}
+
+// ── Specialized Disciplines ──
+.specialized-disciplines {
+  margin-top: 40px;
+  background: #161616;
+  border: 1px solid #272727;
+  border-radius: 16px;
+  padding: 30px 32px;
+
+  .disciplines-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+}
+
+.disciplines-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .discipline-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1f1f1f;
+    border: 1px solid #333;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #e0e0da;
+    transition: all 0.2s ease;
+
+    .chip-bullet {
+      color: var(--lime);
+      font-size: 10px;
+    }
+
+    &:hover {
+      border-color: var(--lime);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialized-disciplines {
+    padding: 24px 20px;
+  }
+}

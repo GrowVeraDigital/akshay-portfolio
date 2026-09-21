@@ -1,0 +1,114 @@
+.about-process-section {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.process-card {
+  position: relative;
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  border: 1px solid #282828;
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200, 255, 0, 0.4);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+
+    .process-step-num {
+      color: var(--lime);
+    }
+  }
+}
+
+.process-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.process-step-num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #777;
+  letter-spacing: -1px;
+  transition: color 0.25s ease;
+}
+
+.process-phase {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.process-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.4px;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.process-desc {
+  color: #9d9d96;
+  font-size: 13px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.process-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+
+  li {
+    font-size: 12px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bullet-check {
+    color: var(--lime);
+    font-size: 11px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 1100px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    padding: 24px 20px;
+  }
+}
