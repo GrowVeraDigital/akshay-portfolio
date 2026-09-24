@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, phone, service, budget, message } = body;
+    const { name, email, phone, service, message } = body;
 
     // Validation
     if (!name || !name.trim()) {
@@ -45,7 +45,6 @@ export async function POST(request) {
           email: email.trim().toLowerCase(),
           phone: phone ? phone.trim() : null,
           service: service || null,
-          budget: budget || null,
           message: message.trim(),
         },
       ]);

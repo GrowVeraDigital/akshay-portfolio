@@ -13,20 +13,11 @@ const projectTypes = [
   "Full Creative Package",
 ];
 
-const budgetRanges = [
-  "< $500 / ₹25k",
-  "$500 – $1,500 / ₹25k – ₹75k",
-  "$1,500 – $3,000 / ₹75k – ₹1.5L",
-  "$3,000+ / Custom",
-  "Flexible / Discuss",
-];
-
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [selectedType, setSelectedType] = useState("Social Media Reels");
-  const [selectedBudget, setSelectedBudget] = useState("$500 – $1,500 / ₹25k – ₹75k");
   const [message, setMessage] = useState("");
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -68,7 +59,6 @@ export default function ContactForm() {
       email,
       phone,
       selectedType,
-      selectedBudget,
       message,
     });
 
@@ -101,7 +91,6 @@ export default function ContactForm() {
           email: email.trim(),
           phone: phone ? phone.trim() : "",
           service: selectedType,
-          budget: selectedBudget,
           message: message.trim(),
         }),
       });
@@ -119,7 +108,6 @@ export default function ContactForm() {
       setPhone("");
       setMessage("");
       setSelectedType(projectTypes[0]);
-      setSelectedBudget(budgetRanges[1]);
 
       setTimeout(() => setSubmitted(false), 7000);
     } catch (err) {
@@ -201,22 +189,6 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Budget Chips */}
-            <div className="form-group">
-              <label>Estimated Budget Range</label>
-              <div className="chips-grid">
-                {budgetRanges.map((b) => (
-                  <button
-                    key={b}
-                    type="button"
-                    className={`chip-btn ${selectedBudget === b ? "active" : ""}`}
-                    onClick={() => setSelectedBudget(b)}
-                  >
-                    {b}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             {/* Message Details */}
             <div className="form-group">
