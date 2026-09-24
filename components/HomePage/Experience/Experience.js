@@ -4,7 +4,7 @@ import "./Experience.scss";
 export default function Experience() {
   return (
     <section className="section projects">
-      <div className="section-labelnew">04 / EXPERIENCE</div>
+      <div className="section-labelnew">05 / EXPERIENCE</div>
       <div className="experience-grid">
         <Reveal className="section-heading">
           <p className="eyebrow">WORK EXPERIENCE</p>

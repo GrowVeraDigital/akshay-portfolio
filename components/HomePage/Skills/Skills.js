@@ -46,7 +46,7 @@ const skillCards = [
       </svg>
     ),
     eyebrow: "CORE EXPERTISE",
-    desc: "Where most of my work lives \u2014 from concept to final delivery.",
+    desc: "Where most of my work lives — from concept to final delivery.",
     list: ["Ads", "Brand Visuals", "Motion Graphics", "Promos", "Reels", "Short Films"],
   },
   {
@@ -67,8 +67,8 @@ const skillCards = [
 
 export default function Skills() {
   return (
-    <section className="section projects">
-      <div className="section-labelnew">05 / SKILLS</div>
+    <section className="section projects skills-section">
+      <div className="section-labelnew">06 / TOOLS &amp; STACK</div>
       <div className="skills-grid-new">
         {skillCards.map((card) => (
           <Reveal key={card.num} className="skill-card">

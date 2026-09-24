@@ -12,7 +12,7 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="section projects">
-      <div className="section-labelnew">03 / SERVICES</div>
+      <div className="section-labelnew">04 / SERVICES</div>
       <div className="services-grid">
         <Reveal className="section-heading">
           <p className="eyebrow">WHAT I DO</p>

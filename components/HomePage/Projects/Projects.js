@@ -78,7 +78,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="section projects">
-      <div className="section-label">02 / SELECTED WORK</div>
+      <div className="section-label">03 / SELECTED WORK</div>
       <div className="projects-head">
         <Reveal className="section-heading">
           <p className="eyebrow">MY WORK</p>

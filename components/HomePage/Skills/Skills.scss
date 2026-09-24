@@ -1,4 +1,7 @@
-.skills-section { padding-top: 60px; padding-bottom: 60px; }
+.skills-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 .skills-grid-new {
   display: grid;
@@ -36,11 +39,14 @@
   box-shadow: 0 24px 50px -20px rgba(0, 0, 0, .6);
 }
 
-.skill-card:hover::before { opacity: 1; }
+.skill-card:hover::before {
+  opacity: 1;
+}
 
 .skill-num {
   position: absolute;
-  top: 14px; right: 22px;
+  top: 14px;
+  right: 22px;
   font-family: "Space Grotesk", sans-serif;
   font-size: 52px;
   font-weight: 700;
@@ -59,7 +65,8 @@
 
 .skill-icon-badge {
   flex-shrink: 0;
-  width: 46px; height: 46px;
+  width: 46px;
+  height: 46px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -69,8 +76,14 @@
   color: var(--lime);
 }
 
-.skill-icon-badge svg { width: 22px; height: 22px; }
-.skill-card-top .eyebrow { margin-bottom: 6px; }
+.skill-icon-badge svg {
+  width: 22px;
+  height: 22px;
+}
+
+.skill-card-top .eyebrow {
+  margin-bottom: 6px;
+}
 
 .skill-desc {
   font-size: 13px;
@@ -101,27 +114,18 @@
   transition: border-color .25s ease, transform .25s ease;
 }
 
-.tool-pill:hover { border-color: var(--lime); transform: translateY(-2px); }
+.tool-pill:hover {
+  border-color: var(--lime);
+  transform: translateY(-2px);
+}
 
 .tool-pill img {
-  width: 22px; height: 22px;
+  width: 22px;
+  height: 22px;
   border-radius: 6px;
   object-fit: contain;
   background: #fff;
   padding: 3px;
-}
-
-.tool-badge {
-  width: 22px; height: 22px;
-  border-radius: 6px;
-  background: var(--lime);
-  color: #111;
-  font-size: 9.5px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: .3px;
 }
 
 .dot-list {
@@ -144,16 +148,30 @@
 .dot-list li::before {
   content: "";
   position: absolute;
-  left: 0; top: 6px;
-  width: 6px; height: 6px;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--lime);
   box-shadow: 0 0 8px rgba(200, 255, 0, .7);
 }
 
 @media(max-width:650px) {
-  .skills-grid-new { grid-template-columns: 1fr; gap: 16px; }
-  .skill-card { padding: 26px 22px 24px; }
-  .skill-num { font-size: 40px; }
-  .skill-desc { max-width: 100%; }
+  .skills-grid-new {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-card {
+    padding: 26px 22px 24px;
+  }
+
+  .skill-num {
+    font-size: 40px;
+  }
+
+  .skill-desc {
+    max-width: 100%;
+  }
 }
