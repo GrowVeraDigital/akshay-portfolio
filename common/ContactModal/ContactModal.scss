@@ -1,0 +1,325 @@
+.contact-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalOverlayFade 0.3s ease forwards;
+}
+
+@keyframes modalOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contact-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background: linear-gradient(180deg, #151515 0%, #0d0d0d 100%);
+  border: 1px solid rgba(200, 255, 0, 0.28);
+  border-radius: 20px;
+  padding: 38px 36px 34px;
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9),
+    0 0 30px -10px rgba(200, 255, 0, 0.15);
+  animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+
+  .modal-ambient-glow {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(200, 255, 0, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// ── Close Button ──
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a4a49c;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 2;
+
+  &:hover {
+    background: rgba(200, 255, 0, 0.15);
+    border-color: var(--lime);
+    color: var(--lime);
+    transform: rotate(90deg);
+  }
+}
+
+// ── Header ──
+.modal-header {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+
+  .modal-eyebrow {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .modal-title {
+    font-size: clamp(26px, 3.8vw, 32px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+
+    span {
+      color: var(--lime);
+    }
+  }
+
+  .modal-desc {
+    font-size: 13.5px;
+    color: #9a9a92;
+    line-height: 1.5;
+  }
+}
+
+// ── Form Inputs ──
+.modal-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.modal-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #b5b5ad;
+    letter-spacing: 0.02em;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: #fff;
+    font-size: 13.5px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.25s ease;
+
+    &:focus {
+      border-color: var(--lime);
+      background: rgba(200, 255, 0, 0.02);
+      box-shadow: 0 0 12px rgba(200, 255, 0, 0.2);
+    }
+
+    &::placeholder {
+      color: #555550;
+    }
+  }
+
+  select {
+    cursor: pointer;
+    background-color: #121212;
+
+    option {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.modal-error-banner {
+  background: rgba(255, 75, 75, 0.1);
+  border: 1px solid rgba(255, 75, 75, 0.35);
+  color: #ff6b6b;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// ── Action Buttons ──
+.modal-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.modal-submit-btn {
+  flex: 1;
+  background: var(--lime);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: #d6ff33;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(200, 255, 0, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.modal-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #d0d0c8;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: rgba(37, 211, 102, 0.12);
+    border-color: #25d366;
+    color: #25d366;
+  }
+}
+
+// ── Success Box ──
+.modal-success-box {
+  text-align: center;
+  padding: 24px 10px;
+
+  .success-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(200, 255, 0, 0.12);
+    border: 2px solid var(--lime);
+    color: var(--lime);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 0 20px rgba(200, 255, 0, 0.3);
+  }
+
+  h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #a4a49c;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto 24px;
+  }
+
+  .modal-done-btn {
+    background: var(--lime);
+    color: #111;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: #d6ff33;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ── Mobile Responsive ──
+@media (max-width: 600px) {
+  .contact-modal-card {
+    padding: 28px 20px 24px;
+  }
+
+  .modal-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-whatsapp-link {
+    justify-content: center;
+  }
+}

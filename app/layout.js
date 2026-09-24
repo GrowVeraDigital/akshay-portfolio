@@ -2,6 +2,7 @@ import "./globals.scss";
 import Header from "@/common/Header/Header";
 import Footer from "@/common/Footer/Footer";
 import BackToTop from "@/common/BackToTop/BackToTop";
+import ContactModal from "@/common/ContactModal/ContactModal";
 
 export const metadata = {
   title: "Akshay Chheta — Graphic Designer & Video Editor",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <BackToTop />
+        <ContactModal />
       </body>
     </html>
   );
