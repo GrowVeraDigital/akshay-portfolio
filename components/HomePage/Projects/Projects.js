@@ -30,7 +30,7 @@ const projectSections = [
     title: "Promotional Ads",
     number: "02",
     subtitle: "Click thumbnail to watch",
-    className: "Promotional Ads",
+    className: "promotional-ads-feature",
     category: "video",
     galleryClassName: "ai-video-gallery",
     videos: [
@@ -56,7 +56,7 @@ const projectSections = [
     title: "Social Media Creatives",
     number: "04",
     subtitle: "Photoshop \u00b7 Illustrator",
-    className: "Reels Video",
+    className: "reels-video-feature",
     category: "video",
     galleryClassName: "ai-video-gallery",
     videos: [
