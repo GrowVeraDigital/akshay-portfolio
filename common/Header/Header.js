@@ -51,7 +51,9 @@ export default function Header() {
         </Link>
         <a
           className="hire-btn"
-          href="mailto:akshaypatel9513@gmail.com"
+          href="https://wa.me/918734839513?text=Hi%20Akshay,%20I'm%20interested%20in%20hiring%20you%20for%20a%20project."
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={closeMenu}
         >
           Hire Me

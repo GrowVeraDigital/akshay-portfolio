@@ -11,8 +11,8 @@ const platforms = [
   },
   {
     name: "WhatsApp Direct",
-    handle: "+91 95130 00000",
-    url: "https://wa.me/919513000000",
+    handle: "+91 87348 39513",
+    url: "https://wa.me/918734839513?text=Hi%20Akshay,%20I'm%20interested%20in%20working%20with%20you.",
     badge: "Fastest",
     icon: "💬",
   },
