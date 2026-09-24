@@ -14,14 +14,6 @@ export default function ServicesHero() {
         <span className="current">SERVICES</span>
       </div>
 
-      {/* Availability Pill */}
-      <Reveal>
-        <div className="services-status-pill">
-          <span className="status-dot"></span>
-          <span>AVAILABLE FOR NEW PROJECTS &amp; MONTHLY RETAINERS</span>
-        </div>
-      </Reveal>
-
       {/* Main Title */}
       <Reveal>
         <h1 className="services-hero-title">
