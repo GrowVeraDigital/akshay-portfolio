@@ -35,7 +35,6 @@ export default function ContactModal() {
 
     return () => clearTimeout(initialTimer);
   }, []);
-
   // 2. Handle Modal Close with Dynamic In-Memory Intervals (5m -> 15m -> 30m infinite)
   const handleClose = () => {
     setIsOpen(false);
