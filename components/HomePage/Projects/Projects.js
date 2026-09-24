@@ -118,11 +118,11 @@ export default function Projects() {
               ))}
             </div>
             <div className="project-meta">
-              <div>
-                <span><h3>{project.number}</h3></span>
-                <h3>{project.title}</h3>
+              <div className="project-meta-left">
+                <span className="project-meta-num">{project.number}</span>
+                <h3 className="project-meta-title">{project.title}</h3>
               </div>
-              <p>{project.subtitle}</p>
+              <p className="project-meta-sub">{project.subtitle}</p>
             </div>
           </Reveal>
         ))}

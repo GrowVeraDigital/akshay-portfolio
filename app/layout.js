@@ -1,4 +1,5 @@
 import "./globals.scss";
+import Script from "next/script";
 import Header from "@/common/Header/Header";
 import Footer from "@/common/Footer/Footer";
 import BackToTop from "@/common/BackToTop/BackToTop";
@@ -17,6 +18,25 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PEWYPEG2P4"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-PEWYPEG2P4');
+            `,
+          }}
+        />
+      </head>
       <body>
         <Header />
         {children}
