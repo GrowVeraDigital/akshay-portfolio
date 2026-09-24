@@ -41,7 +41,6 @@ export default function ContactModal() {
     setIsOpen(false);
     setSubmitted(false);
     setError("");
-
     // Interval Sequence (in milliseconds):
     // 1st close -> 5 min (300,000 ms)
     // 2nd close -> 15 min (900,000 ms)
