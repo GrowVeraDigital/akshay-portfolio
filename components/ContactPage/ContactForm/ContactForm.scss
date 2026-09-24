@@ -145,12 +145,36 @@
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(200, 255, 0, 0.3);
   }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .form-success-banner {
   background: rgba(200, 255, 0, 0.1);
   border: 1px solid rgba(200, 255, 0, 0.35);
   color: #d8ff4d;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.form-error-banner {
+  background: rgba(255, 75, 75, 0.1);
+  border: 1px solid rgba(255, 75, 75, 0.35);
+  color: #ff6b6b;
   padding: 14px 18px;
   border-radius: 8px;
   font-size: 13px;

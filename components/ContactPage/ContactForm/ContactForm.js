@@ -29,7 +29,9 @@ export default function ContactForm() {
   const [selectedBudget, setSelectedBudget] = useState("$500 – $1,500 / ₹25k – ₹75k");
   const [message, setMessage] = useState("");
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
   const [currentTime, setCurrentTime] = useState("");
 
   // Live IST Time
@@ -56,15 +58,79 @@ export default function ContactForm() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Project Inquiry: ${selectedType} — from ${name || "Client"}`);
-    const body = encodeURIComponent(
-      `Hi Akshay,\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\nService: ${selectedType}\nEstimated Budget: ${selectedBudget}\n\nProject Details:\n${message}\n\nLooking forward to hearing from you!`
-    );
-    window.open(`mailto:akshaypatel9513@gmail.com?subject=${subject}&body=${body}`, "_blank");
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+  const handleSubmit = async (e) => {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+
+    console.log("🚀 Contact Form submit initiated...", {
+      name,
+      email,
+      phone,
+      selectedType,
+      selectedBudget,
+      message,
+    });
+
+    if (!name.trim()) {
+      setError("Please enter your name.");
+      return;
+    }
+    if (!email.trim()) {
+      setError("Please enter your email.");
+      return;
+    }
+    if (!message.trim()) {
+      setError("Please enter your project description.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setSubmitted(false);
+
+    try {
+      console.log("📡 Sending POST request to /api/contact...");
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone ? phone.trim() : "",
+          service: selectedType,
+          budget: selectedBudget,
+          message: message.trim(),
+        }),
+      });
+
+      const result = await res.json();
+      console.log("📥 API response:", res.status, result);
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to submit inquiry.");
+      }
+
+      setSubmitted(true);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setSelectedType(projectTypes[0]);
+      setSelectedBudget(budgetRanges[1]);
+
+      setTimeout(() => setSubmitted(false), 7000);
+    } catch (err) {
+      console.error("❌ Submission error:", err);
+      setError(
+        err.message ||
+          "Failed to send message. Please try again or reach out directly via email."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -165,13 +231,24 @@ export default function ContactForm() {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-inquiry-btn">
-              <span>Send Project Inquiry ↗</span>
+            <button
+              type="submit"
+              className="submit-inquiry-btn"
+              disabled={loading}
+              onClick={handleSubmit}
+            >
+              <span>{loading ? "Sending Inquiry..." : "Send Project Inquiry ↗"}</span>
             </button>
 
             {submitted && (
               <div className="form-success-banner">
-                <span>✓</span> Opening email client with your pre-filled inquiry. Talk soon!
+                <span>✓</span> Thank you! Your inquiry has been sent successfully. I will get back to you shortly.
+              </div>
+            )}
+
+            {error && (
+              <div className="form-error-banner">
+                <span>⚠</span> {error}
               </div>
             )}
           </form>
