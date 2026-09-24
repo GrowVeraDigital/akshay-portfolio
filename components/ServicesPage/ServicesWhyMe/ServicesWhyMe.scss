@@ -1,0 +1,151 @@
+.services-whyme-section {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.whyme-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 45px;
+
+  .section-heading h2 {
+    font-size: clamp(36px, 5.2vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+
+    span {
+      color: var(--lime);
+    }
+  }
+
+  .whyme-sub-copy {
+    max-width: 440px;
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+}
+
+.whyme-table-container {
+  background: linear-gradient(180deg, #141414 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.6);
+}
+
+.table-header-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr 1.6fr;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #7d7d75;
+
+  .col-akshay {
+    color: var(--lime);
+  }
+}
+
+.table-body-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr 1.6fr;
+  padding: 24px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+  transition: background 0.25s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba(200, 255, 0, 0.02);
+  }
+
+  .col-feature {
+    .feature-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  .col-akshay {
+    padding-right: 20px;
+    p {
+      font-size: 14px;
+      color: #deded8;
+      line-height: 1.5;
+    }
+  }
+
+  .col-agency {
+    padding-right: 20px;
+    p {
+      font-size: 13.5px;
+      color: #8c8c84;
+      line-height: 1.5;
+    }
+  }
+
+  .akshay-badge,
+  .agency-badge {
+    display: none; // Only show on mobile responsive view
+  }
+}
+
+// ── Responsive ──
+@media (max-width: 900px) {
+  .whyme-head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .table-header-row {
+    display: none;
+  }
+
+  .table-body-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 20px;
+
+    .col-akshay,
+    .col-agency {
+      padding-right: 0;
+    }
+
+    .akshay-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--lime);
+      background: rgba(200, 255, 0, 0.1);
+      border: 1px solid rgba(200, 255, 0, 0.25);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .agency-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      color: #ff6b6b;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.25);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+  }
+}

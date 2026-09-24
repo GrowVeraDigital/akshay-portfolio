@@ -1,0 +1,126 @@
+.services-faq-section {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.faq-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 45px;
+
+  .section-heading h2 {
+    font-size: clamp(36px, 5.2vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+
+    span {
+      color: var(--lime);
+    }
+  }
+
+  .faq-sub-copy {
+    max-width: 420px;
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+}
+
+.services-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-card-item {
+  background: linear-gradient(180deg, #131313 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+
+  &.open {
+    border-color: rgba(200, 255, 0, 0.35);
+    box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.5);
+
+    .faq-question-btn {
+      color: #fff;
+    }
+
+    .faq-toggle-icon {
+      color: var(--lime);
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 20px;
+
+  .faq-q-text {
+    font-size: 17px;
+    font-weight: 700;
+    color: #e5e5df;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .faq-toggle-icon {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #777;
+    transition: transform 0.25s ease, color 0.25s ease;
+    flex-shrink: 0;
+  }
+}
+
+.faq-answer-pane {
+  padding: 0 28px 24px;
+  animation: fadeIn 0.3s ease;
+
+  p {
+    font-size: 14.5px;
+    color: #a4a49c;
+    line-height: 1.65;
+  }
+}
+
+// ── Responsive ──
+@media (max-width: 900px) {
+  .faq-head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-question-btn {
+    padding: 18px 20px;
+    .faq-q-text {
+      font-size: 15.5px;
+    }
+  }
+
+  .faq-answer-pane {
+    padding: 0 20px 20px;
+  }
+}

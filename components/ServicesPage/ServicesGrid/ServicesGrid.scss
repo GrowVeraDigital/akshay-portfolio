@@ -1,0 +1,299 @@
+.services-grid-section {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.services-catalog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 45px;
+
+  .section-heading h2 {
+    font-size: clamp(36px, 5.2vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+
+    span {
+      color: var(--lime);
+    }
+  }
+
+  .services-catalog-sub {
+    max-width: 420px;
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+}
+
+// ── Service Cards Grid (3 Columns on Desktop) ──
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-deep-card {
+  position: relative;
+  background: linear-gradient(180deg, #131313 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 34px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  .service-card-ambient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(200, 255, 0, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(200, 255, 0, 0.4);
+    box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.8),
+      0 0 30px -5px rgba(200, 255, 0, 0.15);
+
+    .service-card-ambient {
+      opacity: 1;
+    }
+
+    .service-icon-box {
+      background: rgba(200, 255, 0, 0.18);
+      border-color: var(--lime);
+      color: var(--lime);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(200, 255, 0, 0.25);
+    }
+
+    .service-inquire-btn {
+      background: var(--lime);
+      color: #111;
+      border-color: var(--lime);
+
+      .arrow-sym {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// ── Card Header ──
+.service-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.service-num-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .service-num-text {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #4a4a45;
+    letter-spacing: -0.02em;
+  }
+
+  .service-badge-pill {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--lime);
+    background: rgba(200, 255, 0, 0.08);
+    border: 1px solid rgba(200, 255, 0, 0.25);
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+}
+
+.service-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+// ── Title & Description ──
+.service-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.service-card-desc {
+  font-size: 14px;
+  color: #a4a49c;
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+// ── Deliverables List ──
+.service-deliverables-block {
+  margin-bottom: 28px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+
+  .deliverables-title {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--lime);
+    margin-bottom: 12px;
+  }
+
+  .deliverables-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      color: #d0d0c8;
+      line-height: 1.4;
+
+      .check-icon {
+        color: var(--lime);
+        font-weight: 700;
+        font-size: 12px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+    }
+  }
+}
+
+// ── Meta Footer (Tools + Turnaround) ──
+.service-meta-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+  margin-bottom: 22px;
+
+  .meta-title {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6d6d66;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .tools-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .tool-tag {
+      font-size: 11px;
+      color: #b5b5ad;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .meta-right {
+    text-align: right;
+    flex-shrink: 0;
+
+    .turnaround-val {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--lime);
+    }
+  }
+}
+
+// ── Inquire Button ──
+.service-inquire-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  .arrow-sym {
+    transition: transform 0.25s ease;
+  }
+}
+
+// ── Responsive ──
+@media (max-width: 1150px) {
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .services-catalog-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .service-deep-card {
+    padding: 26px 20px 22px;
+  }
+}

@@ -35,7 +35,11 @@ export default function Header() {
         <Link href="/#projects" onClick={closeMenu}>
           Projects
         </Link>
-        <Link href="/#services" onClick={closeMenu}>
+        <Link
+          href="/services"
+          className={pathname === "/services" ? "active" : ""}
+          onClick={closeMenu}
+        >
           Services
         </Link>
         <Link

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/common/Reveal/Reveal";
 import "./Services.scss";
 
@@ -21,6 +22,11 @@ export default function Services() {
             <br />
             for <span>digital brands.</span>
           </h2>
+          <div style={{ marginTop: "28px" }}>
+            <Link href="/services" className="btn btn-ghost">
+              Explore All Services &amp; Packages <span>→</span>
+            </Link>
+          </div>
         </Reveal>
         <div className="service-list">
           {services.map((s) => (
