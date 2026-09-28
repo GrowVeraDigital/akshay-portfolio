@@ -72,3 +72,10 @@
 @media(max-width:650px) {
   .real-work-head h3 { font-size: 30px; }
 }
+
+@media(max-width:480px) {
+  .real-work-head h3 { font-size: 24px; letter-spacing: -1.5px; }
+  .design-gallery { gap: 6px; }
+  .design-item>span { font-size: 9px; padding: 4px 6px; }
+}
+

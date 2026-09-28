@@ -80,6 +80,7 @@
     width: 22px;
     height: 2px;
     background: #fff;
+    transition: transform .2s ease, opacity .2s ease;
   }
 
   .nav {
@@ -93,6 +94,12 @@
     padding: 25px 20px;
     background: #121212;
     border-bottom: 1px solid var(--line);
+    animation: navSlideDown .25s ease;
+  }
+
+  @keyframes navSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .nav.open {
@@ -106,5 +113,25 @@
 
   .hire-btn {
     text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 8px;
   }
 }
+
+@media(max-width:480px) {
+  .site-header {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav {
+    top: 64px;
+    padding: 20px 16px;
+  }
+}
+

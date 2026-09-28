@@ -19,3 +19,16 @@
   .service p { grid-column: 2; }
   .service b { grid-column: 3; grid-row: 1; }
 }
+
+@media(max-width:480px) {
+  .service {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+  }
+  .service>span { font-size: 10px; }
+  .service h3 { font-size: 18px; }
+  .service p { font-size: 12px; }
+  .service b { display: none; }
+}
+

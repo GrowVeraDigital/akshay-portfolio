@@ -136,3 +136,19 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-hero-section {
+    padding-top: 95px;
+  }
+
+  .contact-hero-title {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .contact-hero-desc {
+    font-size: 15px;
+  }
+}
+

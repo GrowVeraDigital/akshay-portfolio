@@ -315,3 +315,27 @@
     height: 360px;
   }
 }
+
+@media (max-width: 480px) {
+  .about-hero-section {
+    padding-top: 95px;
+  }
+
+  .about-hero-title {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .about-hero-desc {
+    font-size: 15px;
+  }
+
+  .about-hero-card {
+    max-width: 280px;
+    height: 310px;
+  }
+
+  .hero-badge { display: none; }
+  .floating-app-icon { display: none; }
+}
+

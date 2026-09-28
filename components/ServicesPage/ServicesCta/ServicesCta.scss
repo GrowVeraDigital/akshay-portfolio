@@ -139,3 +139,25 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .services-cta-banner {
+    padding: 35px 20px;
+    border-radius: 16px;
+  }
+
+  .cta-content-wrap .cta-heading {
+    font-size: 28px;
+  }
+
+  .cta-content-wrap .cta-sub {
+    font-size: 14px;
+  }
+
+  .cta-primary-btn,
+  .cta-secondary-btn {
+    font-size: 13px;
+    padding: 14px 20px;
+  }
+}
+

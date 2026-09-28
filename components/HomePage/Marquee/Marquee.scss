@@ -31,3 +31,16 @@
 @keyframes scroll {
   to { transform: translateX(-25%); }
 }
+
+@media(max-width:650px) {
+  .marquee { padding: 14px 0; }
+  .marquee-track { font-size: 13px; }
+  .marquee-group { gap: 24px; padding-right: 24px; }
+}
+
+@media(max-width:480px) {
+  .marquee { padding: 12px 0; }
+  .marquee-track { font-size: 11px; }
+  .marquee-group { gap: 18px; padding-right: 18px; }
+}
+

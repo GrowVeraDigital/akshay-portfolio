@@ -35,3 +35,10 @@
 @media(max-width:650px) {
   .info-row { grid-template-columns: 1fr; }
 }
+
+@media(max-width:480px) {
+  .about-copy { font-size: 15px; }
+  .info-row { gap: 12px; margin-top: 35px; }
+  .info-row strong { font-size: 12px; }
+}
+
