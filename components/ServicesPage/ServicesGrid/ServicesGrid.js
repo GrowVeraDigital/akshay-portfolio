@@ -121,7 +121,7 @@ const detailedServices = [
       "Motion Interpolation & Audio Atmosphere",
       "AI + Human Editing Hybrid Delivery",
     ],
-    tools: ["Runway Gen-3", "Midjourney", "Kling AI", "Premiere Pro"],
+    tools: ["Runway Gen-3", "Midjourney", "Kling AI", "Higgsfield", "Grok"],
     idealFor: "Forward-thinking Brands, Music Videos & Experimental Visuals",
     turnaround: "2–4 Days",
   },
