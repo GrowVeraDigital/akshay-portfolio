@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Logo from "@/public/assets/Logo.png";
 import "./Header.scss";
 
 export default function Header() {
@@ -14,7 +16,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <Link href="/" className="logo">
-        AKSHAY<span>.</span>
+        <Image src={Logo} alt="Growvera Digital" height={40} priority />
       </Link>
       <button
         className="menu-btn"
