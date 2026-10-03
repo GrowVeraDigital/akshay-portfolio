@@ -37,14 +37,23 @@ export default function Hero() {
           alt="Akshay Chheta illustration"
           className="hero-character"
         />
+        {/* Left Side Floating Icons */}
         <div className="skill-icon icon-ps float-a" title="Adobe Photoshop">
           <img src="/assets/icons/photoshop.webp" alt="Adobe Photoshop" />
         </div>
-        <div className="skill-icon icon-ai float-b" title="Adobe Illustrator">
-          <img src="/assets/icons/illustrator.webp" alt="Adobe Illustrator" />
+        <div className="skill-icon icon-higgsfield float-f" title="Higgsfield AI">
+          <img src="/assets/icons/higgsfield.png" alt="Higgsfield AI" />
         </div>
         <div className="skill-icon icon-ae float-c" title="Adobe After Effects">
           <img src="/assets/icons/aftereffects.webp" alt="Adobe After Effects" />
+        </div>
+
+        {/* Right Side Floating Icons */}
+        <div className="skill-icon icon-ai float-b" title="Adobe Illustrator">
+          <img src="/assets/icons/illustrator.webp" alt="Adobe Illustrator" />
+        </div>
+        <div className="skill-icon icon-canva float-e" title="Canva">
+          <img src="/assets/icons/canva.png" alt="Canva" />
         </div>
         <div className="skill-icon icon-pr float-d" title="Adobe Premiere Pro">
           <img src="/assets/icons/premiere.webp" alt="Adobe Premiere Pro" />

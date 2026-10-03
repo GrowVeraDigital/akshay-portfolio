@@ -99,23 +99,34 @@
 .skill-icon {
   position: absolute;
   z-index: 4;
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  filter: drop-shadow(0 14px 24px #0009);
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.65));
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1) !important;
+  }
 }
 
 .skill-icon img {
   width: 100%;
   height: 100%;
   display: block;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
-.icon-ps { top: 6%; left: 2%; }
-.icon-ai { top: 12%; right: 0%; }
-.icon-ae { bottom: 16%; left: -2%; }
-.icon-pr { bottom: 6%; right: 4%; }
+.icon-ps { top: 5%; left: 0%; }
+.icon-higgsfield { top: 43%; left: -3%; }
+.icon-ae { bottom: 12%; left: -1%; }
+
+.icon-ai { top: 9%; right: -2%; }
+.icon-canva { top: 46%; right: -4%; }
+.icon-pr { bottom: 7%; right: 1%; }
+
+.icon-canva, .icon-canva img { border-radius: 50%; }
+.icon-higgsfield, .icon-higgsfield img { border-radius: 18px; }
 
 @keyframes float-a {
   0%, 100% { transform: translate(0, 0) rotate(-4deg); }
@@ -137,10 +148,22 @@
   50% { transform: translate(-6px, -14px) rotate(-2deg); }
 }
 
+@keyframes float-e {
+  0%, 100% { transform: translate(0, 0) rotate(2deg); }
+  50% { transform: translate(8px, -14px) rotate(-3deg); }
+}
+
+@keyframes float-f {
+  0%, 100% { transform: translate(0, 0) rotate(-2deg); }
+  50% { transform: translate(-7px, -15px) rotate(3deg); }
+}
+
 .float-a { animation: float-a 6.5s ease-in-out infinite; }
 .float-b { animation: float-b 7.5s ease-in-out infinite; }
 .float-c { animation: float-c 8.2s ease-in-out infinite; }
 .float-d { animation: float-d 7s ease-in-out infinite; }
+.float-e { animation: float-e 6.2s ease-in-out infinite; }
+.float-f { animation: float-f 6.8s ease-in-out infinite; }
 
 @media(max-width:900px) {
   .hero { grid-template-columns: 1fr; padding-top: 125px; }
@@ -159,8 +182,8 @@
   .floating-card { min-width: 120px; }
   .card-top { top: 40px; }
   .card-bottom { bottom: 15px; }
-  .skill-icon { width: 38px; height: 38px; border-radius: 9px; }
-  .skill-icon img { border-radius: 9px; }
+  .skill-icon { width: 52px; height: 52px; border-radius: 12px; }
+  .skill-icon img { border-radius: 12px; }
 }
 
 @media(max-width:480px) {
@@ -170,8 +193,8 @@
   .lime-orb { width: 240px; height: 240px; }
   .visual-ring { width: 200px; height: 200px; }
   .hero-character { height: 300px; }
-  .skill-icon { width: 32px; height: 32px; border-radius: 8px; }
-  .skill-icon img { border-radius: 8px; }
+  .skill-icon { width: 44px; height: 44px; border-radius: 10px; }
+  .skill-icon img { border-radius: 10px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
 }
 
