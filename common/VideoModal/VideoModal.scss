@@ -24,7 +24,8 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
 }
 
-.video-modal-inner iframe {
+.video-modal-inner iframe,
+.video-modal-inner video {
   position: absolute;
   inset: 0;
   width: 100%;

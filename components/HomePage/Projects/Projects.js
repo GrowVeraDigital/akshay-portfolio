@@ -58,7 +58,7 @@ const projectSections = [
   {
     title: "Social Media Creatives",
     number: "04",
-    subtitle: "Photoshop \u00b7 Illustrator",
+    subtitle: "Click thumbnail to watch",
     className: "reels-video-feature",
     category: "video",
     galleryClassName: "ai-video-gallery",
@@ -67,12 +67,14 @@ const projectSections = [
       { href: "https://youtube.com/shorts/6pHrA_0R-Lw", thumb: assetPath("/assets/projects/ReelsThumbnail/2.webp"), alt: "AI Video 02", num: "02" },
       { href: "https://youtube.com/shorts/r3pQCyCj6-k", thumb: assetPath("/assets/projects/ReelsThumbnail/3.webp"), alt: "AI Video 03", num: "03" },
       { href: "https://youtube.com/shorts/A6JtqycWYIk", thumb: assetPath("/assets/projects/ReelsThumbnail/4.webp"), alt: "AI Video 04", num: "04" },
+      { href: assetPath("/assets/projects/drhp-video.mp4"), local: true, alt: "DRHP — Social Media Creative", num: "05" },
     ],
   },
 ];
 
 export default function Projects() {
   const [activeVideoId, setActiveVideoId] = useState(null);
+  const [activeLocalVideo, setActiveLocalVideo] = useState(null);
 
   const handleVideoClick = (href) => {
     const videoId = getYouTubeId(href);
@@ -109,11 +111,16 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleVideoClick(video.href);
+                    if (video.local) setActiveLocalVideo(video);
+                    else handleVideoClick(video.href);
                   }}
                 >
                   <div className="video-thumb">
-                    <img src={video.thumb} alt={video.alt} loading="lazy" />
+                    {video.local ? (
+                      <video src={`${video.href}#t=0.1`} muted playsInline preload="metadata" aria-label={video.alt} />
+                    ) : (
+                      <img src={video.thumb} alt={video.alt} loading="lazy" />
+                    )}
                     <span className="thumb-play">▶</span>
                     <span className="thumb-number">{video.num}</span>
                   </div>
@@ -147,6 +154,13 @@ export default function Projects() {
         <VideoModal
           videoId={activeVideoId}
           onClose={() => setActiveVideoId(null)}
+        />
+      )}
+      {activeLocalVideo && (
+        <VideoModal
+          videoSrc={activeLocalVideo.href}
+          title={activeLocalVideo.alt}
+          onClose={() => setActiveLocalVideo(null)}
         />
       )}
     </section>

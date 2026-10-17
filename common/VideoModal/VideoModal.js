@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import "./VideoModal.scss";
 
-export default function VideoModal({ videoId, onClose }) {
+export default function VideoModal({ videoId, videoSrc, title = "Project video", onClose }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = useCallback(() => {
@@ -38,13 +38,15 @@ export default function VideoModal({ videoId, onClose }) {
         ×
       </button>
       <div className="video-modal-inner">
-        <iframe
+        {videoSrc ? (
+          <video src={videoSrc} controls autoPlay playsInline aria-label={title} />
+        ) : <iframe
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
+        ></iframe>}
       </div>
     </div>
   );
