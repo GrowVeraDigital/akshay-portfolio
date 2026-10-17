@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Reveal from "@/common/Reveal/Reveal";
+import { createInquiryMailto } from "@/lib/inquiryEmail";
 import "./ContactForm.scss";
 
 const projectTypes = [
@@ -20,7 +21,6 @@ export default function ContactForm() {
   const [selectedType, setSelectedType] = useState("Social Media Reels");
   const [message, setMessage] = useState("");
   const [copied, setCopied] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [currentTime, setCurrentTime] = useState("");
@@ -49,76 +49,15 @@ export default function ContactForm() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = async (e) => {
-    if (e && e.preventDefault) {
-      e.preventDefault();
-    }
-
-    console.log("🚀 Contact Form submit initiated...", {
-      name,
-      email,
-      phone,
-      selectedType,
-      message,
-    });
-
-    if (!name.trim()) {
-      setError("Please enter your name.");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError("Please fill in all required fields.");
       return;
     }
-    if (!email.trim()) {
-      setError("Please enter your email.");
-      return;
-    }
-    if (!message.trim()) {
-      setError("Please enter your project description.");
-      return;
-    }
-
-    setLoading(true);
     setError("");
-    setSubmitted(false);
-
-    try {
-      console.log("📡 Sending POST request to /api/contact...");
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          phone: phone ? phone.trim() : "",
-          service: selectedType,
-          message: message.trim(),
-        }),
-      });
-
-      const result = await res.json();
-      console.log("📥 API response:", res.status, result);
-
-      if (!res.ok) {
-        throw new Error(result.error || "Failed to submit inquiry.");
-      }
-
-      setSubmitted(true);
-      setName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-      setSelectedType(projectTypes[0]);
-
-      setTimeout(() => setSubmitted(false), 7000);
-    } catch (err) {
-      console.error("❌ Submission error:", err);
-      setError(
-        err.message ||
-          "Failed to send message. Please try again or reach out directly via email."
-      );
-    } finally {
-      setLoading(false);
-    }
+    window.location.href = createInquiryMailto({ name, email, phone, service: selectedType, message });
+    setSubmitted(true);
   };
 
   return (
@@ -206,15 +145,13 @@ export default function ContactForm() {
             <button
               type="submit"
               className="submit-inquiry-btn"
-              disabled={loading}
-              onClick={handleSubmit}
             >
-              <span>{loading ? "Sending Inquiry..." : "Send Project Inquiry ↗"}</span>
+              <span>Send Project Inquiry ↗</span>
             </button>
 
             {submitted && (
               <div className="form-success-banner">
-                <span>✓</span> Thank you! Your inquiry has been sent successfully. I will get back to you shortly.
+                <span>✓</span> Send the prepared draft from your email app to complete your inquiry. If it did not open, check your default email app settings. Your details are kept here so you can try again.
               </div>
             )}
 

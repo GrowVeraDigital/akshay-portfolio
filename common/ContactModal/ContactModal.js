@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createInquiryMailto } from "@/lib/inquiryEmail";
 import "./ContactModal.scss";
 
 const serviceOptions = [
@@ -21,7 +22,6 @@ export default function ContactModal() {
   const [email, setEmail] = useState("");
   const [service, setService] = useState(serviceOptions[0]);
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
@@ -76,48 +76,15 @@ export default function ContactModal() {
   }, [isOpen, closeCount]);
 
   // Form Submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) {
       setError("Please fill in all required fields.");
       return;
     }
-
-    setLoading(true);
     setError("");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          service,
-          message: message.trim(),
-        }),
-      });
-
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to submit inquiry.");
-      }
-
-      setSubmitted(true);
-      setName("");
-      setEmail("");
-      setMessage("");
-
-      // Auto-close after 3.5 seconds on successful submission
-      setTimeout(() => {
-        handleClose();
-      }, 3500);
-    } catch (err) {
-      console.error("Popup submit error:", err);
-      setError(err.message || "Failed to send message. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+    window.location.href = createInquiryMailto({ name, email, service, message });
+    setSubmitted(true);
   };
 
   if (!isOpen) return null;
@@ -158,17 +125,17 @@ export default function ContactModal() {
         {submitted ? (
           <div className="modal-success-box">
             <div className="success-icon">✓</div>
-            <h3>Thank You!</h3>
+            <h3>Complete Your Inquiry</h3>
             <p>
-              Your message has been sent successfully. Akshay will review your
-              inquiry and respond within 24 hours!
+              Send the prepared draft from your email app to complete your inquiry.
+              If it did not open, check your default email app settings.
             </p>
             <button
               type="button"
               className="modal-done-btn"
-              onClick={handleClose}
+              onClick={() => setSubmitted(false)}
             >
-              Close Window
+              Back to Form
             </button>
           </div>
         ) : (
@@ -236,9 +203,8 @@ export default function ContactModal() {
               <button
                 type="submit"
                 className="modal-submit-btn"
-                disabled={loading}
               >
-                <span>{loading ? "Sending..." : "Send Inquiry ↗"}</span>
+                <span>Send Inquiry ↗</span>
               </button>
 
               <a
