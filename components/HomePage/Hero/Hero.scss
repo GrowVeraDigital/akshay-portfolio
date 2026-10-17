@@ -66,6 +66,21 @@
   max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 30px 50px #000a);
+  transform-origin: 50% 90%;
+  animation: hero-character-float 6s ease-in-out infinite;
+}
+
+@keyframes hero-character-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-14px) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-character,
+  .hero-visual .skill-icon,
+  .hero-visual .visual-ring {
+    animation: none;
+  }
 }
 
 .floating-card {

@@ -35,8 +35,10 @@ export default function Hero() {
         <div className="lime-orb"></div>
         <div className="visual-ring"></div>
         <img
-          src={assetPath("/assets/projects/character.webp")}
-          alt="Akshay Chheta illustration"
+          src={assetPath("/assets/projects/hero-laptop-character.webp")}
+          alt="Friendly cartoon creative holding a silver MacBook"
+          width={765}
+          height={1360}
           className="hero-character"
         />
         {/* Left Side Floating Icons */}
