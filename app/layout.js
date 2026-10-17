@@ -3,7 +3,6 @@ import Script from "next/script";
 import Header from "@/common/Header/Header";
 import Footer from "@/common/Footer/Footer";
 import BackToTop from "@/common/BackToTop/BackToTop";
-import ContactModal from "@/common/ContactModal/ContactModal";
 
 export const metadata = {
   metadataBase: new URL("https://growveradigital.github.io"),
@@ -58,7 +57,6 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <BackToTop />
-        <ContactModal />
       </body>
     </html>
   );
