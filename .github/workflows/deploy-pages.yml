@@ -17,8 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NEXT_PUBLIC_BASE_PATH: /akshay-portfolio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,8 +24,11 @@ jobs:
           node-version: 22
           cache: npm
       - uses: actions/configure-pages@v5
+        id: pages
       - run: npm ci
       - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
