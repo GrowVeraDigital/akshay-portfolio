@@ -52,7 +52,8 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>
+      {/* Extensions may inject attributes on body before React hydrates. */}
+      <body suppressHydrationWarning>
         <Header />
         {children}
         <Footer />
