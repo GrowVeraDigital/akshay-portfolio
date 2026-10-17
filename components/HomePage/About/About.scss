@@ -1,3 +1,37 @@
+.about-heading.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.about-heading h2 > .about-heading-word {
+  color: inherit;
+}
+
+.about-heading .about-heading-word {
+  display: inline-block;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.22, 1, .36, 1), filter .8s ease;
+  transition-delay: var(--word-delay, 0ms);
+}
+
+.about-heading.show .about-heading-word {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-heading .about-heading-word {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
 .about-copy {
   font-size: 18px;
   line-height: 1.7;

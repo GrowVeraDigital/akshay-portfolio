@@ -7,12 +7,16 @@ export default function About() {
     <section id="about" className="section projects">
       <div className="section-label">01 / ABOUT</div>
       <div className="about-grid">
-        <Reveal className="section-heading">
+        <Reveal className="section-heading about-heading">
           <p className="eyebrow">A LITTLE ABOUT ME</p>
-          <h2>
-            Creative mind.
+          <h2 aria-label="Creative mind. Visual storyteller.">
+            <span className="about-heading-word" aria-hidden="true">Creative</span>{" "}
+            <span className="about-heading-word" style={{ "--word-delay": "120ms" }} aria-hidden="true">mind.</span>
             <br />
-            <span>Visual storyteller.</span>
+            <span aria-hidden="true">
+              <span className="about-heading-word" style={{ "--word-delay": "240ms" }}>Visual</span>{" "}
+              <span className="about-heading-word" style={{ "--word-delay": "360ms" }}>storyteller.</span>
+            </span>
           </h2>
         </Reveal>
         <Reveal className="about-copy">
