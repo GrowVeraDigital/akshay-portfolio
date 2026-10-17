@@ -1,3 +1,5 @@
+
+import { assetPath } from "@/lib/assetPath";
 import Reveal from "@/common/Reveal/Reveal";
 import "./Hero.scss";
 
@@ -20,7 +22,7 @@ export default function Hero() {
             View My Work <span>↗</span>
           </a>
           <a
-            href="/assets/Akshay-Chheta-Resume.pdf"
+            href={assetPath("/assets/Akshay-Chheta-Resume.pdf")}
             className="btn btn-ghost"
             target="_blank"
           >
@@ -33,30 +35,30 @@ export default function Hero() {
         <div className="lime-orb"></div>
         <div className="visual-ring"></div>
         <img
-          src="/assets/projects/character.webp"
+          src={assetPath("/assets/projects/character.webp")}
           alt="Akshay Chheta illustration"
           className="hero-character"
         />
         {/* Left Side Floating Icons */}
         <div className="skill-icon icon-ps float-a" title="Adobe Photoshop">
-          <img src="/assets/icons/photoshop.webp" alt="Adobe Photoshop" />
+          <img src={assetPath("/assets/icons/photoshop.webp")} alt="Adobe Photoshop" />
         </div>
         <div className="skill-icon icon-higgsfield float-f" title="Higgsfield AI">
-          <img src="/assets/icons/higgsfield.png" alt="Higgsfield AI" />
+          <img src={assetPath("/assets/icons/higgsfield.png")} alt="Higgsfield AI" />
         </div>
         <div className="skill-icon icon-ae float-c" title="Adobe After Effects">
-          <img src="/assets/icons/aftereffects.webp" alt="Adobe After Effects" />
+          <img src={assetPath("/assets/icons/aftereffects.webp")} alt="Adobe After Effects" />
         </div>
 
         {/* Right Side Floating Icons */}
         <div className="skill-icon icon-ai float-b" title="Adobe Illustrator">
-          <img src="/assets/icons/illustrator.webp" alt="Adobe Illustrator" />
+          <img src={assetPath("/assets/icons/illustrator.webp")} alt="Adobe Illustrator" />
         </div>
         <div className="skill-icon icon-canva float-e" title="Canva">
-          <img src="/assets/icons/canva.png" alt="Canva" />
+          <img src={assetPath("/assets/icons/canva.png")} alt="Canva" />
         </div>
         <div className="skill-icon icon-pr float-d" title="Adobe Premiere Pro">
-          <img src="/assets/icons/premiere.webp" alt="Adobe Premiere Pro" />
+          <img src={assetPath("/assets/icons/premiere.webp")} alt="Adobe Premiere Pro" />
         </div>
       </Reveal>
     </section>

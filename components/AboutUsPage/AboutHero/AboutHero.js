@@ -1,3 +1,5 @@
+
+import { assetPath } from "@/lib/assetPath";
 import Link from "next/link";
 import Reveal from "@/common/Reveal/Reveal";
 import "./AboutHero.scss";
@@ -38,7 +40,7 @@ export default function AboutHero() {
               Explore Work <span>↗</span>
             </Link>
             <a
-              href="/assets/Akshay-Chheta-Resume.pdf"
+              href={assetPath("/assets/Akshay-Chheta-Resume.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost"
@@ -54,7 +56,7 @@ export default function AboutHero() {
             <div className="card-ambient-ring"></div>
 
             <img
-              src="/assets/projects/character.webp"
+              src={assetPath("/assets/projects/character.webp")}
               alt="Akshay Chheta"
               className="about-character-img"
             />
@@ -76,16 +78,16 @@ export default function AboutHero() {
             </div>
 
             <div className="floating-app-icon icon-1" title="Adobe Photoshop">
-              <img src="/assets/icons/photoshop.webp" alt="Photoshop" />
+              <img src={assetPath("/assets/icons/photoshop.webp")} alt="Photoshop" />
             </div>
             <div className="floating-app-icon icon-2" title="Adobe Illustrator">
-              <img src="/assets/icons/illustrator.webp" alt="Illustrator" />
+              <img src={assetPath("/assets/icons/illustrator.webp")} alt="Illustrator" />
             </div>
             <div className="floating-app-icon icon-3" title="Adobe Premiere Pro">
-              <img src="/assets/icons/premiere.webp" alt="Premiere Pro" />
+              <img src={assetPath("/assets/icons/premiere.webp")} alt="Premiere Pro" />
             </div>
             <div className="floating-app-icon icon-4" title="Adobe After Effects">
-              <img src="/assets/icons/aftereffects.webp" alt="After Effects" />
+              <img src={assetPath("/assets/icons/aftereffects.webp")} alt="After Effects" />
             </div>
           </div>
         </Reveal>

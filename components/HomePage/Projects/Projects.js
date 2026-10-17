@@ -1,5 +1,8 @@
 "use client";
 
+import { assetPath } from "@/lib/assetPath";
+
+
 import { useState } from "react";
 import Reveal from "@/common/Reveal/Reveal";
 import VideoModal from "@/common/VideoModal/VideoModal";
@@ -20,10 +23,10 @@ const projectSections = [
     category: "video",
     galleryClassName: "ai-video-gallery",
     videos: [
-      { href: "https://youtube.com/shorts/1Kue8s-YoHU", thumb: "/assets/projects/AiVideoThumbnail/1.webp", alt: "AI Video 01", num: "01" },
-      { href: "https://youtube.com/shorts/2HO9ZpUgjns", thumb: "/assets/projects/AiVideoThumbnail/2.webp", alt: "AI Video 02", num: "02" },
-      { href: "https://youtube.com/shorts/gdA-MbTdpas", thumb: "/assets/projects/AiVideoThumbnail/3.webp", alt: "AI Video 03", num: "03" },
-      { href: "https://youtube.com/shorts/GF4iU3a1BG0", thumb: "/assets/projects/AiVideoThumbnail/4.webp", alt: "AI Video 04", num: "04" },
+      { href: "https://youtube.com/shorts/1Kue8s-YoHU", thumb: assetPath("/assets/projects/AiVideoThumbnail/1.webp"), alt: "AI Video 01", num: "01" },
+      { href: "https://youtube.com/shorts/2HO9ZpUgjns", thumb: assetPath("/assets/projects/AiVideoThumbnail/2.webp"), alt: "AI Video 02", num: "02" },
+      { href: "https://youtube.com/shorts/gdA-MbTdpas", thumb: assetPath("/assets/projects/AiVideoThumbnail/3.webp"), alt: "AI Video 03", num: "03" },
+      { href: "https://youtube.com/shorts/GF4iU3a1BG0", thumb: assetPath("/assets/projects/AiVideoThumbnail/4.webp"), alt: "AI Video 04", num: "04" },
     ],
   },
   {
@@ -34,10 +37,10 @@ const projectSections = [
     category: "video",
     galleryClassName: "ai-video-gallery",
     videos: [
-      { href: "https://youtube.com/shorts/1B9buL4ajiY", thumb: "/assets/projects/AdsThumbnail/1.webp", alt: "AI Video 01", num: "01" },
-      { href: "https://youtube.com/shorts/-h9NOe-WsWQ", thumb: "/assets/projects/AdsThumbnail/2.webp", alt: "AI Video 02", num: "02" },
-      { href: "https://youtube.com/shorts/6jSjJhCdx-c", thumb: "/assets/projects/AdsThumbnail/3.webp", alt: "AI Video 03", num: "03" },
-      { href: "https://youtube.com/shorts/O3FZfwDCJao", thumb: "/assets/projects/AdsThumbnail/4.webp", alt: "AI Video 04", num: "04" },
+      { href: "https://youtube.com/shorts/1B9buL4ajiY", thumb: assetPath("/assets/projects/AdsThumbnail/1.webp"), alt: "AI Video 01", num: "01" },
+      { href: "https://youtube.com/shorts/-h9NOe-WsWQ", thumb: assetPath("/assets/projects/AdsThumbnail/2.webp"), alt: "AI Video 02", num: "02" },
+      { href: "https://youtube.com/shorts/6jSjJhCdx-c", thumb: assetPath("/assets/projects/AdsThumbnail/3.webp"), alt: "AI Video 03", num: "03" },
+      { href: "https://youtube.com/shorts/O3FZfwDCJao", thumb: assetPath("/assets/projects/AdsThumbnail/4.webp"), alt: "AI Video 04", num: "04" },
     ],
   },
   {
@@ -48,8 +51,8 @@ const projectSections = [
     category: "motion",
     galleryClassName: "motion-graphics-gallery",
     videos: [
-      { href: "https://youtube.com/shorts/RAtOgdckiNo", thumb: "/assets/projects/MotionGraphicsThumbnail/1.webp", alt: "Motion Graphics 01", num: "01" },
-      { href: "https://youtube.com/shorts/3L0UKqgEE3Q", thumb: "/assets/projects/MotionGraphicsThumbnail/2.webp", alt: "Motion Graphics 02", num: "02" },
+      { href: "https://youtube.com/shorts/RAtOgdckiNo", thumb: assetPath("/assets/projects/MotionGraphicsThumbnail/1.webp"), alt: "Motion Graphics 01", num: "01" },
+      { href: "https://youtube.com/shorts/3L0UKqgEE3Q", thumb: assetPath("/assets/projects/MotionGraphicsThumbnail/2.webp"), alt: "Motion Graphics 02", num: "02" },
     ],
   },
   {
@@ -60,10 +63,10 @@ const projectSections = [
     category: "video",
     galleryClassName: "ai-video-gallery",
     videos: [
-      { href: "https://youtube.com/shorts/PxhHR3XEOtc", thumb: "/assets/projects/ReelsThumbnail/5.png", alt: "AI Video 01", num: "01" },
-      { href: "https://youtube.com/shorts/6pHrA_0R-Lw", thumb: "/assets/projects/ReelsThumbnail/2.webp", alt: "AI Video 02", num: "02" },
-      { href: "https://youtube.com/shorts/r3pQCyCj6-k", thumb: "/assets/projects/ReelsThumbnail/3.webp", alt: "AI Video 03", num: "03" },
-      { href: "https://youtube.com/shorts/A6JtqycWYIk", thumb: "/assets/projects/ReelsThumbnail/4.webp", alt: "AI Video 04", num: "04" },
+      { href: "https://youtube.com/shorts/PxhHR3XEOtc", thumb: assetPath("/assets/projects/ReelsThumbnail/5.png"), alt: "AI Video 01", num: "01" },
+      { href: "https://youtube.com/shorts/6pHrA_0R-Lw", thumb: assetPath("/assets/projects/ReelsThumbnail/2.webp"), alt: "AI Video 02", num: "02" },
+      { href: "https://youtube.com/shorts/r3pQCyCj6-k", thumb: assetPath("/assets/projects/ReelsThumbnail/3.webp"), alt: "AI Video 03", num: "03" },
+      { href: "https://youtube.com/shorts/A6JtqycWYIk", thumb: assetPath("/assets/projects/ReelsThumbnail/4.webp"), alt: "AI Video 04", num: "04" },
     ],
   },
 ];

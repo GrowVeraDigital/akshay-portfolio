@@ -1,5 +1,8 @@
 "use client";
 
+import { assetPath } from "@/lib/assetPath";
+
+
 import { useEffect, useRef, useState } from "react";
 import ImageModal from "@/common/ImageModal/ImageModal";
 import "./DesignGallery.scss";
@@ -8,7 +11,7 @@ const designItems = Array.from({ length: 25 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
   const ext = i + 1 >= 21 ? "jpg" : "webp";
   return {
-    src: `/assets/projects/graphic-design/graphic-${num}.${ext}`,
+    src: assetPath(`/assets/projects/graphic-design/graphic-${num}.${ext}`),
     title: `Graphic Design Work ${num}`,
     num,
   };

@@ -1,3 +1,5 @@
+
+import { assetPath } from "@/lib/assetPath";
 import Link from "next/link";
 import Reveal from "@/common/Reveal/Reveal";
 import "./AboutCta.scss";
@@ -30,7 +32,7 @@ export default function AboutCta() {
             Browse All Projects
           </Link>
           <a
-            href="/assets/Akshay-Chheta-Resume.pdf"
+            href={assetPath("/assets/Akshay-Chheta-Resume.pdf")}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-btn cta-btn-outline"

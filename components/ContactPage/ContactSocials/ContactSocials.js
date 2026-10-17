@@ -1,3 +1,5 @@
+
+import { assetPath } from "@/lib/assetPath";
 import Reveal from "@/common/Reveal/Reveal";
 import "./ContactSocials.scss";
 
@@ -40,7 +42,7 @@ const platforms = [
   {
     name: "Download Resume",
     handle: "Akshay-Chheta-CV.pdf",
-    url: "/assets/Akshay-Chheta-Resume.pdf",
+    url: assetPath("/assets/Akshay-Chheta-Resume.pdf"),
     badge: "PDF",
     icon: "📄",
     targetBlank: true,

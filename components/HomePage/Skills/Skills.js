@@ -1,3 +1,5 @@
+
+import { assetPath } from "@/lib/assetPath";
 import Reveal from "@/common/Reveal/Reveal";
 import "./Skills.scss";
 
@@ -13,9 +15,9 @@ const skillCards = [
     eyebrow: "VIDEO EDITING",
     desc: "Cutting, pacing and grading footage into reels, promos and short films.",
     tools: [
-      { icon: "/assets/icons/premiere.webp", name: "Premiere Pro" },
-      { icon: "/assets/icons/aftereffects.webp", name: "After Effects" },
-      { icon: "/assets/icons/capcut.jpg", name: "CapCut" },
+      { icon: assetPath("/assets/icons/premiere.webp"), name: "Premiere Pro" },
+      { icon: assetPath("/assets/icons/aftereffects.webp"), name: "After Effects" },
+      { icon: assetPath("/assets/icons/capcut.jpg"), name: "CapCut" },
     ],
   },
   {
@@ -31,9 +33,9 @@ const skillCards = [
     eyebrow: "GRAPHIC DESIGN",
     desc: "Building clean, brand-ready visuals for ads and social creatives.",
     tools: [
-      { icon: "/assets/icons/photoshop.webp", name: "Photoshop" },
-      { icon: "/assets/icons/illustrator.webp", name: "Illustrator" },
-      { icon: "/assets/icons/canva.png", name: "Canva" },
+      { icon: assetPath("/assets/icons/photoshop.webp"), name: "Photoshop" },
+      { icon: assetPath("/assets/icons/illustrator.webp"), name: "Illustrator" },
+      { icon: assetPath("/assets/icons/canva.png"), name: "Canva" },
     ],
   },
   {

@@ -1,3 +1,5 @@
+
+import { assetPath } from "@/lib/assetPath";
 import Reveal from "@/common/Reveal/Reveal";
 import "./AboutTools.scss";
 
@@ -5,7 +7,7 @@ const softwareStack = [
   {
     name: "Adobe Premiere Pro",
     category: "Primary NLE",
-    icon: "/assets/icons/premiere.webp",
+    icon: assetPath("/assets/icons/premiere.webp"),
     level: "95%",
     desc: "Long-form cutting, commercial editing, multi-cam pacing, sound design sync, and color grading pipelines.",
     tags: ["Pacing", "Speed Ramps", "Sound Mix", "LUTs"],
@@ -13,7 +15,7 @@ const softwareStack = [
   {
     name: "Adobe After Effects",
     category: "Motion & VFX",
-    icon: "/assets/icons/aftereffects.webp",
+    icon: assetPath("/assets/icons/aftereffects.webp"),
     level: "90%",
     desc: "Kinetic typography, 2D animation, motion graphics for ads, logo reveals, and visual effects compositing.",
     tags: ["Kinetic Type", "Graph Editor", "Tracking", "Transitions"],
@@ -21,7 +23,7 @@ const softwareStack = [
   {
     name: "Adobe Photoshop",
     category: "Raster & Imaging",
-    icon: "/assets/icons/photoshop.webp",
+    icon: assetPath("/assets/icons/photoshop.webp"),
     level: "95%",
     desc: "High-CTR YouTube/Reel thumbnail design, complex photo manipulation, poster art, and digital ad visuals.",
     tags: ["Thumbnails", "Compositing", "Retouching", "Color Balance"],
@@ -29,7 +31,7 @@ const softwareStack = [
   {
     name: "Adobe Illustrator",
     category: "Vector Graphics",
-    icon: "/assets/icons/illustrator.webp",
+    icon: assetPath("/assets/icons/illustrator.webp"),
     level: "88%",
     desc: "Scalable vector logos, brand identities, custom iconography, illustrations, and print-ready digital assets.",
     tags: ["Vector Art", "Logos", "Branding", "Iconography"],
@@ -37,7 +39,7 @@ const softwareStack = [
   {
     name: "CapCut Pro",
     category: "Short-Form Velocity",
-    icon: "/assets/icons/capcut.jpg",
+    icon: assetPath("/assets/icons/capcut.jpg"),
     level: "92%",
     desc: "Rapid turnaround reels, dynamic automated captions, trending audio sync, and mobile-optimized formats.",
     tags: ["Dynamic Captions", "Fast Turnaround", "Sound FX", "Hooks"],
@@ -45,7 +47,7 @@ const softwareStack = [
   {
     name: "Canva Pro",
     category: "Rapid Collateral",
-    icon: "/assets/icons/canva.png",
+    icon: assetPath("/assets/icons/canva.png"),
     level: "90%",
     desc: "Quick social media templates, client presentation decks, and rapid marketing collateral prototyping.",
     tags: ["Presentations", "Templates", "Social Posts", "Prototypes"],
