@@ -6,9 +6,23 @@ import BackToTop from "@/common/BackToTop/BackToTop";
 import ContactModal from "@/common/ContactModal/ContactModal";
 
 export const metadata = {
+  metadataBase: new URL("https://growveradigital.github.io"),
   title: "Akshay Chheta — Graphic Designer & Video Editor",
   description:
     "Akshay Chheta — Graphic Designer & Video Editor portfolio.",
+  openGraph: {
+    type: "website",
+    siteName: "Growvera Digital",
+    title: "Akshay Chheta — Graphic Designer & Video Editor",
+    description: "Creative visuals, brand design, video editing and motion graphics.",
+    images: [{ url: "/social-preview.jpg", width: 1200, height: 630, alt: "Growvera Digital — Design that connects. Visuals that move." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Akshay Chheta — Graphic Designer & Video Editor",
+    description: "Creative visuals, brand design, video editing and motion graphics.",
+    images: ["/social-preview.jpg"],
+  },
 };
 
 export const viewport = {
