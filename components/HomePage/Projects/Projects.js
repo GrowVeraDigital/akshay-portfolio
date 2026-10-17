@@ -106,6 +106,13 @@ export default function Projects() {
             className={`project-card large ${project.className}`}
             data-category={project.category}
           >
+            <div className="project-meta">
+              <div className="project-meta-left">
+                <span className="project-meta-num">{project.number}</span>
+                <h3 className="project-meta-title">{project.title}</h3>
+              </div>
+              <p className="project-meta-sub">{project.subtitle}</p>
+            </div>
             <div className={project.galleryClassName}>
               {project.videos.map((video) => (
                 <a
@@ -132,13 +139,6 @@ export default function Projects() {
                   </div>
                 </a>
               ))}
-            </div>
-            <div className="project-meta">
-              <div className="project-meta-left">
-                <span className="project-meta-num">{project.number}</span>
-                <h3 className="project-meta-title">{project.title}</h3>
-              </div>
-              <p className="project-meta-sub">{project.subtitle}</p>
             </div>
           </Reveal>
         ))}
