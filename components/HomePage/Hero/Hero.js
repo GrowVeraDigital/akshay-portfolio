@@ -63,7 +63,7 @@ export default function Hero() {
       <Reveal className="hero-visual">
         <div className="lime-orb"></div>
         <div className="visual-ring"></div>
-        <div className={`hero-character${typed > 0 && typed < headline.length ? " is-typing" : ""}`}>
+        <div className="hero-character">
         <img
           src={assetPath("/assets/projects/hero-laptop-character.webp")}
           alt="Friendly cartoon creative holding a silver MacBook"
@@ -71,7 +71,6 @@ export default function Hero() {
           height={1360}
           className="character-base"
         />
-        <img src={assetPath("/assets/projects/hero-typing-frame.webp")} className="character-typing-hand" alt="" aria-hidden="true" width={765} height={1360} />
         </div>
         {/* Left Side Floating Icons */}
         <div className="skill-icon icon-ps float-a" title="Adobe Photoshop">

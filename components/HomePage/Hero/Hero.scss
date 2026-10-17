@@ -72,14 +72,6 @@
 }
 
 .hero-character img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.character-typing-hand {
-  position: absolute;
-  inset: 0;
-  clip-path: polygon(42% 43.5%, 63% 43.5%, 63% 49.5%, 42% 49.5%);
-  opacity: 0;
-}
-.is-typing .character-typing-hand { animation: keyboard-tap .28s steps(1) infinite; }
-@keyframes keyboard-tap { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
 .hero h1 .typing-white { color: inherit; }
 .hero h1 .typed-letter { color: inherit; visibility: hidden; }
 .hero h1 .typed-letter.visible { visibility: visible; }
@@ -93,7 +85,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-character,
-  .hero-character .character-typing-hand,
   .hero-visual .skill-icon,
   .hero-visual .visual-ring {
     animation: none;
