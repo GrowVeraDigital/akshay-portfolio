@@ -100,9 +100,8 @@ export default function Projects() {
 
       <div className="project-grid">
         {projectSections.map((project) => (
-          <Reveal
+          <article
             key={project.number}
-            tag="article"
             className={`project-card large ${project.className}`}
             data-category={project.category}
           >
@@ -114,10 +113,12 @@ export default function Projects() {
               <p className="project-meta-sub">{project.subtitle}</p>
             </div>
             <div className={project.galleryClassName}>
-              {project.videos.map((video) => (
-                <a
+              {project.videos.map((video, index) => (
+                <Reveal
+                  tag="a"
                   key={video.num}
-                  className="ai-video-card"
+                  className="ai-video-card video-slide-left"
+                  style={{ "--video-delay": `${(index % 4) * 90}ms` }}
                   href={video.href}
                   aria-label={`Watch ${video.alt}`}
                   target="_blank"
@@ -137,10 +138,10 @@ export default function Projects() {
                     <span className="thumb-play">▶</span>
                     <span className="thumb-number">{video.num}</span>
                   </div>
-                </a>
+                </Reveal>
               ))}
             </div>
-          </Reveal>
+          </article>
         ))}
       </div>
 
