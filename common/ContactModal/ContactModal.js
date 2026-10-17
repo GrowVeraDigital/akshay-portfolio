@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { createInquiryMailto } from "@/lib/inquiryEmail";
+import { createInquiryMailto, createInquiryWhatsAppUrl } from "@/lib/inquiryEmail";
 import "./ContactModal.scss";
 
 const serviceOptions = [
@@ -208,7 +208,7 @@ export default function ContactModal() {
               </button>
 
               <a
-                href="https://wa.me/918734839513?text=Hi%20Akshay,%20I'm%20reaching%20out%20from%20your%20website%20popup."
+                href={createInquiryWhatsAppUrl({ name, email, service, message })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="modal-whatsapp-link"

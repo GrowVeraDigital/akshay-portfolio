@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Reveal from "@/common/Reveal/Reveal";
-import { createInquiryMailto } from "@/lib/inquiryEmail";
+import { createInquiryMailto, createInquiryWhatsAppUrl } from "@/lib/inquiryEmail";
 import "./ContactForm.scss";
 
 const projectTypes = [
@@ -193,7 +193,7 @@ export default function ContactForm() {
               Prefer chatting directly on WhatsApp? Send a ping with your project brief.
             </p>
             <a
-              href="https://wa.me/918734839513?text=Hi%20Akshay,%20I'm%20reaching%20out%20from%20your%20portfolio."
+              href={createInquiryWhatsAppUrl({ name, email, phone, service: selectedType, message })}
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-btn"
