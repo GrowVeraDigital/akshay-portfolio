@@ -68,6 +68,11 @@ const projectSections = [
       { href: "https://youtube.com/shorts/r3pQCyCj6-k", thumb: assetPath("/assets/projects/ReelsThumbnail/3.webp"), alt: "AI Video 03", num: "03" },
       { href: "https://youtube.com/shorts/A6JtqycWYIk", thumb: assetPath("/assets/projects/ReelsThumbnail/4.webp"), alt: "AI Video 04", num: "04" },
       { href: assetPath("/assets/projects/drhp-video.mp4"), local: true, alt: "DRHP — Social Media Creative", num: "05" },
+      { href: assetPath("/assets/projects/stock-market.mp4"), local: true, alt: "Stock Market — Social Media Creative", num: "06" },
+      { href: assetPath("/assets/projects/silver.mp4"), local: true, alt: "Silver — Social Media Creative", num: "07" },
+      { href: assetPath("/assets/projects/resume.mp4"), local: true, alt: "Resume — Social Media Creative", num: "08" },
+      { href: assetPath("/assets/projects/ai-tool.mp4"), local: true, alt: "AI Tool — Social Media Creative", num: "09" },
+      { href: assetPath("/assets/projects/presentation.mp4"), local: true, alt: "Presentation — Social Media Creative", num: "10" },
     ],
   },
 ];
@@ -107,6 +112,7 @@ export default function Projects() {
                   key={video.num}
                   className="ai-video-card"
                   href={video.href}
+                  aria-label={`Watch ${video.alt}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => {
